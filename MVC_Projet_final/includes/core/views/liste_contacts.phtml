@@ -1,0 +1,54 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+</head>
+<body>
+	<main>
+		<nav>
+			<?php require_once "includes/partials/navbar.phtml"; ?>
+		</nav>
+		<header>
+			<h1>Titre de ma page Liste Contacts</h1>
+		</header>
+		<a href="index.php?page=contact&action=add">Ajouter un contact</a>
+		<table>
+			<thead>
+				<th>Email</th>
+				<th>Password</th>
+				<th>Avatar</th>
+				<th>Date Naissance</th>
+				<th colspan="2">Actions</th>
+			</thead>
+			<tbody>
+				<?php
+				foreach ($lesContacts as $unContact){
+					print('<tr>');
+					print('<td>'.$unContact->getEmail().'</td>');
+					print('<td>'.$unContact->getPassword().'</td>');
+					print('<td>'.$unContact->getAvatar().'</td>');
+					print('<td>'.$unContact->getDateNaissance()->format('d/m/Y').'</td>');
+					print("<td><a href=\"index.php?page=contact&action=edit&id={$unContact->getId()}\">Modifier</a></td>");
+					print('<td><a href="index.php?page=contact&action=delete&id='.$unContact->getId().'">Supprimer</a></td>');
+					print('</tr>');
+				}
+				?>
+			</tbody>
+		</table>
+		<pre>
+			<?php 
+				//print_r($lesContacts);
+			?>
+		</pre>
+		<footer>
+			<?php require_once "includes/partials/footer.phtml"; ?>
+		</footer>
+	</main>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script>
+</html>

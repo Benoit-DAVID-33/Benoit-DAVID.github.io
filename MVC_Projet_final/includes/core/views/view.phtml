@@ -1,0 +1,141 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+	<link rel="stylesheet" href="public/styles/styles.css" type="text/css" />
+</head>
+<body>
+	<header>
+		<nav>
+			<?php require_once "includes/partials/navbar.phtml"; ?>
+		</nav>
+		<h1>Bienvenue sur CinemALL</h1>
+	</header>
+	<section class="content1">
+		<p class="content1">Votre référence en ligne pour tout ce qui concerne l'univers cinématographique. Notre site est conçu pour les passionnés de cinéma, qu'ils soient fans de films d'auteur, 
+			de blockbusters, de films indépendants ou de tout autre genre cinématographique. Nous offrons une gamme complète de services et de contenu, y compris des critiques de films, 
+			des interviews exclusives, des actualités de l'industrie, des analyses de films et des reportages sur les festivals de cinéma les plus prestigieux du monde. Nous sommes fiers 
+			de fournir des informations et des commentaires détaillés pour vous aider à découvrir les films les plus intéressants à regarder. Que vous soyez un cinéphile passionné ou simplement 
+			à la recherche d'un bon film à regarder, vous trouverez tout ce dont vous avez besoin sur notre site de cinéma.</p>
+	</section>
+	<main class="content">
+		<h2>Les films les plus populaires</h2>
+		<div class="moviesContainerAll">
+			<section class="moviesContainer1" name="mc">
+     
+    		</section>
+    	
+    		<h2>Les films les mieux notés</h2>
+    		<section class="moviesContainer2" name="mc">
+    		
+    		</section>
+    		<section class="newsMovieContainer">
+    			<div class="newsMovieElement">
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/asterix-cover.jpg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Critiques de film</span></h3>
+    					</div>
+    					<p>Astérix et Obélix : L'Empire du Milieu est un film qui vous prendra aux tripes et vous emmènera dans un voyage émotionnel incroyable. 
+    						Basé sur une histoire vraie, ce drame relate la vie d'un homme qui a surmonté de nombreuses épreuves pour réaliser son rêve.</p>
+    				</a></div>
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/casting.jpeg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Annonces de casting</h3></span>
+    					</div>
+    					<p>Les annonces de casting sont des articles qui présentent les dernières nouvelles sur les acteurs et les actrices qui ont été choisis pour jouer dans des films à venir. 
+    						Les fans peuvent ainsi découvrir qui va jouer leur personnage préféré dans le prochain blockbuster.</p>
+    				</a></div>
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/interview.jpg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Interviews avec les acteurs et les réalisateurs</h3></span>
+    					</div>
+    					<p>Les interviews avec les acteurs et les réalisateurs sont des articles qui permettent aux fans d'en savoir plus sur les personnes qui sont à l'origine des films qu'ils aiment. 
+    						Les interviews peuvent aborder des sujets tels que les processus de création, les choix artistiques et les défis rencontrés lors de la production.</p>
+    				</a></div>
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/coulisse.jpg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Articles sur les coulisses de la production</h3></span>
+    					</div>
+    					<p>Les articles sur les coulisses de la production sont des articles qui dévoilent les dessous de la création des films. Ils peuvent présenter des anecdotes intéressantes sur le tournage, 
+    						les défis logistiques rencontrés lors de la production et les coulisses de la conception de costumes, de maquillage ou d'effets spéciaux.</p>
+    				</a></div>
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/box-office.jpg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Box-office et chiffres de vente</h3></span>
+    					</div>
+    					<p>Les articles sur les résultats au box-office et les chiffres de vente sont des articles qui examinent les performances des films dans les cinémas. 
+    						Ils peuvent donner des informations sur les recettes brutes, les ventes de DVD et de Blu-ray et d'autres indicateurs de popularité.</p>
+    				</a></div>
+    				<div class="newMovieContent"><a href="">
+    					<div class="newMP">
+    						<div class="newMPImgDiv">
+    							<img src="public/medias/livre.jpg" class="newMPiImg"></img>
+    						</div>
+    						<span class="newMPSpan">
+    							<h3>Actualités sur les adaptations de livres en films</h3></span>
+    					</div>
+    					<p>Les adaptations de livres en films sont des articles qui présentent les dernières nouvelles sur les adaptations cinématographiques de livres populaires. 
+    						Ils peuvent inclure des informations sur les choix de casting, les réécritures du scénario et les dates de sortie.</p>
+    				</a></div>
+    			</div>
+    			
+    		</section>
+
+    		<h2>Les prochaines sorties</h2>
+    		<section class="moviesContainer3" name="mc">
+    		
+    		</section>
+    	</div>
+    	<div class="pub">
+    		<div class="containerPub">
+    			<img src="public/medias/dune.jpg"></img>
+    			<iframe width="560" height="315" src="https://www.youtube.com/embed/n9xhJrPXop4" title="YouTube video player" frameborder="0" 
+    			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    		</div>	
+    	</div>
+	</main>
+	<form method="POST" action="?page=newsletter&action=add" id="newsletterForm">
+	 	<div class="pop-up" id="popup">
+	   		<div class="pop-up-container">
+	     		<h3>Ne manquez rien !<br />S'inscrire à notre newsletter</h3>
+	     		<div class="button-container">
+	       			<input type="email" name="email" placeholder="Veuillez saisir votre email" required="required"/>
+	       			<input type="submit" value="Soumettre"/>
+	     		</div>
+	     		<div class="far fa-times-circle" id="closeBtn2"></div>
+	   		</div>
+	 	</div>
+	</form>
+	<footer>
+		<?php require_once "includes/partials/footer.phtml"; ?>
+	</footer>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script> 
+<script type="text/javascript" src="public/scripts/script_view.js"></script>
+</html>

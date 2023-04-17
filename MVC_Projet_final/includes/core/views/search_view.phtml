@@ -1,0 +1,31 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+	<link rel="stylesheet" href="public/styles/styles.css" type="text/css" />
+</head>
+<body>
+	<nav>
+		<?php require_once "includes/partials/navbar.phtml"; ?>
+	</nav>
+	<header>
+		<h1>Votre recherche :</h1>
+	</header>
+	<main class="">
+		
+	  <section class="searchContainer">
+      <ul id="resultsList"></ul>
+    </section>
+	</main>
+	<footer>
+		<?php require_once "includes/partials/footer.phtml"; ?>
+	</footer>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script>
+<script type="text/javascript" src="public/scripts/script_search_view.js"></script>
+</html>

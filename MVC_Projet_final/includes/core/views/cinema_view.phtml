@@ -1,0 +1,176 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+	<link rel="stylesheet" href="public/styles/styles.css" type="text/css" />
+</head>
+<body>
+	<nav>
+		<?php require_once "includes/partials/navbar.phtml"; ?>
+	</nav>
+	<header class="cinemaTop">
+		<h1 class="cinemaTitle">Trouver une séance de cinéma avec notre partenaire <span>CGR cinemas</span></h1>
+		<img src="public/medias/logoCGR.png" alt="logo CGR"></img>
+	</header>
+	<main class="content">
+	    <div>
+            <div id="map_home_2017">
+            	<ul id="menucarte_2017">
+            		<li class="abbeville"><a class="" href="https://www.cgrcinemas.fr/abbeville/" title="CGR Abbeville - La Sucrerie">Abbeville - La Sucrerie</a></li>		
+            		<li class="agen"><a class="" href="https://www.cgrcinemas.fr/agen/" title="CGR - Agen">Agen</a></li>
+            		<li class="albi"><a href="#" class="avec_sousrubs">Albi <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li><a class="" href="https://www.cgrcinemas.fr/albi/" title="CGR - Albi - Les Cordeliers">CGR Albi - Les Cordeliers</a></li>
+            				<li><a class="" href="https://www.cgrcinemas.fr/laperouse/" title="CGR - Albi - Lapérouse">CGR Albi Lapérouse</a></li>
+            			</ul>
+            		</li>
+            		<li class="angouleme"><a class="" href="https://www.cgrcinemas.fr/angouleme/" title="CGR Angoulême">Angoulême</a></li>		
+            		<li class="auxerre"><a class="" href="https://www.cgrcinemas.fr/auxerre/" title="CGR Auxerre">Auxerre </a></li>		
+            		<li class="bayonne"><a href="#" class="avec_sousrubs">Bayonne <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li><a class="" href="https://www.cgrcinemas.fr/tarnos/" title="CGR Tarnos">CGR Tarnos</a></li>
+            				<li><a class="" href="https://www.cgrcinemas.fr/bayonne/" title="CGR Bayonne">CGR  Bayonne</a></li>
+            			</ul>
+            		</li>
+            		<li class="beaune"><a class="" href="https://www.cgrcinemas.fr/beaune/" title="CGR - Beaune">Beaune</a></li>		
+            		<li class="beauvais"><a class="" href="https://www.cgrcinemas.fr/beauvais/" title="CGR - Beauvais">Beauvais</a></li>		
+            		<li class="blagnac"><a class="" href="https://www.cgrcinemas.fr/blagnac/" title="CGR Toulouse Blagnac ">Blagnac</a></li>		
+            		<li class="bordeaux"><a href="#" class="avec_sousrubs">Bordeaux <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li><a class="" href="https://www.cgrcinemas.fr/lefrancais/" title="CGR Bordeaux le Français">CGR Bordeaux Le Français </a></li>
+            				<li><a class="" href="https://www.cgrcinemas.fr/villenave/" title="CGR Villenave-d'Ornon">CGR Villenave-d'Ornon</a></li>
+            			</ul>
+            		</li>
+            		<li class="bourges"><a class="" href="https://www.cgrcinemas.fr/bourges/" title="CGR Bourges">Bourges</a></li>		
+            		<li class="brest"><a class="" href="https://www.cgrcinemas.fr/brest/" title="CGR Brest Le Celtic">Brest Le Celtic</a></li>		
+            		<li class="brignais"><a class="" href="https://www.cgrcinemas.fr/brignais/" title="CGR Lyon Brignais">Brignais</a></li>		
+            		<li class="brive"><a class="" href="https://www.cgrcinemas.fr/brive/" title="CGR Brive-la-Gaillarde">Brive-la-Gaillarde</a></li>		
+            		<li class="bruay"><a class="" href="https://www.cgrcinemas.fr/bruay/" title="CGR Bruay-la-Buissière">Bruay-la-Buissière</a></li>		
+            		<li class="cagnes-sur-mer"><a class="" href="https://www.cgrcinemas.fr/cagnes-sur-mer/" title="CGR - Cagnes-sur-Mer - Polygone Riviera"
+            		>Cagnes-sur-Mer</a></li>
+            		<li class="carcassonne"><a href="#" class="avec_sousrubs">Carcassonne <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-carcassonne"><a class="" href="https://www.cgrcinemas.fr/carcassonne/" title="CGR - Carcassonne">CGR Carcassonne</a></li>
+            				<li class="sub-carcassonne-colisee"><a class="" href="https://www.cgrcinemas.fr/carcassonne-colisee/" title="CGR - Carcassonne - 
+            				Le Colisée">CGR Carcassonne Le Colisée</a></li>
+            			</ul>
+            		</li>
+            		<li class="castres"><a class="" href="https://www.cgrcinemas.fr/castres/" title="CGR - Castres - Le Lido">Castres</a></li>		
+            		<li class="chateauroux"><a class="" href="https://www.cgrcinemas.fr/chateauroux/" title="CGR - Chateauroux">Chateauroux</a></li>		
+            		<li class="cherbourg"><a href="#" class="avec_sousrubs">Cherbourg <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-cherbourg"><a class="" href="https://www.cgrcinemas.fr/cherbourg/" title="CGR Cherbourg">CGR Cherbourg</a></li>
+            				<li class="sub-cherbourg-odeon"><a class="" href="https://www.cgrcinemas.fr/cherbourg-odeon/" title="CGR Cherbourg Odéon">
+            				    CGR Cherbourg Odéon</a></li>
+            			</ul>
+            		</li>
+            		<li class="cholet"><a class="" href="https://www.cgrcinemas.fr/cholet/" title="CGR - Cholet - Arcades Rougé">Cholet Arcades Rougé</a></li>		
+            		<li class="colmar"><a class="" href="https://www.cgrcinemas.fr/colmar/" title="CGR Colmar">Colmar</a></li>		<li class="cinemajestic">
+            		    <a class="" href="https://www.cgrcinemas.fr/cinemajestic/" title="CGR Châlons-en-Champagne">Châlons-en-Champagne</a></li>		
+                    <li class="clermont"><a href="#" class="avec_sousrubs">Clermont-Ferrand <span class="nb-sub-cines">(3)</span></a>
+                    	<ul class="soussites">
+                        	<li class="sub-clermont-ferrand"><a class="" href="https://www.cgrcinemas.fr/clermont-ferrand/" title="CGR Clermont-Ferrand 
+                        	Les Ambiances ">CGR Clermont-Ferrand Les Ambiances</a></li>
+                            <li class="sub-leparis"><a class="" href="https://www.cgrcinemas.fr/leparis/" title="CGR Clermont-Ferrand Le Paris">
+                                CGR Clermont-Ferrand Le Paris</a></li>
+                            <li class="sub-val-arena"><a class="" href="https://www.cgrcinemas.fr/val-arena/" title="CGR - Clermont-Ferrand - Val Arena">
+                                CGR  Clermont-Ferrand Val Arena</a></li>
+                        </ul>
+                    </li>
+            		<li class="draguignan-chabran"><a class="" href="https://www.cgrcinemas.fr/draguignan-chabran/" title="CGR Draguignan Chabran">
+            		    Draguignan Chabran</a></li>		
+            		<li class="evry"><a class="" href="https://www.cgrcinemas.fr/evry/" title="CGR Evry">Evry</a></li>		<li class="epinay"><a class="" 
+            		href="https://www.cgrcinemas.fr/epinay/" title="CGR Epinay-sur-Seine">Epinay-sur-Seine</a></li>		
+            		<li class="myplace"><a class="" href="https://www.cgrcinemas.fr/myplace/" title="CGR My Place">Sarcelles My Place</a></li>		
+            		<li class="megakine"><a class="" href="https://www.cgrcinemas.fr/megakine/" title="CGR Freyming">Freyming</a></li>		
+            		<li class="laciotat"><a class="" href="https://www.cgrcinemas.fr/laciotat/" title="CGR - La Ciotat - Le Spot">La Ciotat</a></li>		
+            		<li class="lameziere"><a class="" href="https://www.cgrcinemas.fr/lameziere/" title="CGR Rennes La Mézière">La Mézière</a></li>		
+            		<li class="lanester"><a class="" href="https://www.cgrcinemas.fr/lanester/" title="CGR Lanester">Lanester</a></li>		
+            		<li class="larochelle"><a href="#" class="avec_sousrubs">La Rochelle <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-larochelle"><a class="" href="https://www.cgrcinemas.fr/larochelle/" title="CGR La Rochelle Les Minimes">
+            				    CGR La Rochelle Les Minimes</a></li>
+            				<li class="sub-dragon"><a class="" href="https://www.cgrcinemas.fr/dragon/" title="CGR La Rochelle Dragon">CGR La Rochelle Dragon</a></li>
+            			</ul>
+            		</li>
+            		<li class="lattes"><a class="" href="https://www.cgrcinemas.fr/lattes/" title="CGR Montpellier Lattes">Lattes</a></li>		
+            		<li class="lemans"><a href="#" class="avec_sousrubs">Le Mans <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-stsaturnin"><a class="" href="https://www.cgrcinemas.fr/stsaturnin/" title="CGR Le Mans Saint-Saturnin">
+            				    CGR Saint-Saturnin</a></li>
+            				<li class="sub-lemans"><a class="" href="https://www.cgrcinemas.fr/lemans/" title="CGR Le Mans Le Colisée ">CGR Le Mans Le Colisée</a></li>
+            			</ul>
+            		</li>
+            		<li class="lescar"><a class="" href="https://www.cgrcinemas.fr/lescar/" title="CGR Lescar">Lescar</a></li>		
+            		<li class="manosque-la-villette"><a class="" href="https://www.cgrcinemas.fr/manosque-la-villette/" title="CGR MANOSQUE">Manosque</a>
+            		</li>		<li class="mantes"><a class="" href="https://www.cgrcinemas.fr/mantes/" title="CGR Mantes-la-Jolie">Mantes-la-Jolie</a>
+            		</li>		<li class="montauban"><a href="#" class="avec_sousrubs">Montauban <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-montauban"><a class="" href="https://www.cgrcinemas.fr/montauban/" title="CGR - Montauban">CGR Montauban</a></li>
+            				<li class="sub-montauban-le-paris"><a class="" href="https://www.cgrcinemas.fr/montauban-le-paris/" title="CGR - Montauban - 
+            				Le Paris">CGR Montauban Le Paris</a></li>
+            			</ul>
+            		</li>
+            		<li class="moulins"><a class="" href="https://www.cgrcinemas.fr/moulins/" title="CGR - Moulins">Moulins</a></li>
+            		<li class="nanterre"><a class="" href="https://www.cgrcinemas.fr/nanterre/" title="CGR - Nanterre - Coeur Université">
+            		    Nanterre Coeur Université</a></li>		<li class="narbonne"><a class="" href="https://www.cgrcinemas.fr/narbonne/" 
+            		    title="CGR Narbonne">Narbonne</a></li>		<li class="nimes"><a class="" href="https://www.cgrcinemas.fr/nimes/" 
+            		    title="CGR - Nîmes">Nîmes</a></li>		<li class="niort"><a class="" href="https://www.cgrcinemas.fr/niort/" title="CGR Niort">Niort</a></li>
+            		<li class="paris-lilas"><a class="" href="https://www.cgrcinemas.fr/paris-lilas/" title="CGR - Paris - Lilas">Paris - Lilas</a></li>		
+            		<li class="pau"><a href="#" class="avec_sousrubs">Pau <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-pau2"><a class="" href="https://www.cgrcinemas.fr/pau2/" title="CGR Pau Université">CGR Pau Université </a></li>
+            				<li class="sub-pau"><a class="" href="https://www.cgrcinemas.fr/pau/" title="CGR Pau Saint-Louis">CGR Pau Saint-Louis</a></li>
+            			</ul>
+            		</li>
+            		
+            		<li class="perigueux"><a class="" href="https://www.cgrcinemas.fr/perigueux/" title="CGR - Périgueux">Périgueux</a></li>
+            		<li class="poitiers"><a href="#" class="avec_sousrubs">Poitiers <span class="nb-sub-cines">(3)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-buxerolles"><a class="" href="https://www.cgrcinemas.fr/buxerolles/" title="CGR Buxerolles">CGR Buxerolles</a></li>
+            				<li class="sub-poitiers"><a class="" href="https://www.cgrcinemas.fr/poitiers/" title="CGR Poitiers Castille ">
+            				    CGR Poitiers Castille</a></li>
+            				<li class="sub-fontainelecomte"><a class="" href="https://www.cgrcinemas.fr/fontainelecomte/" title="CGR Fontaine-Le-Comte">
+            				    CGR Fontaine-Le-Comte</a></li>
+            			</ul>
+            		</li>
+            		<li class="rivesaltes"><a class="" href="https://www.cgrcinemas.fr/rivesaltes/" title="CGR Perpignan Rivesaltes ">Rivesaltes</a></li>		
+            		<li class="rodez"><a class="" href="https://www.cgrcinemas.fr/rodez/" title="CGR - Rodez">Rodez</a></li>
+            		<li class="saint-quentin"><a class="" href="https://www.cgrcinemas.fr/saint-quentin/" title="CGR - Saint-Quentin ">Saint-Quentin</a></li>		
+            		<li class="soissons"><a class="" href="https://www.cgrcinemas.fr/soissons/" title="CGR - Soissons - Le Clovis">Soissons</a></li>
+            		<li class="tarbes"><a class="" href="https://www.cgrcinemas.fr/tarbes/" title="CGR Tarbes">Tarbes</a></li>
+            		<li class="tours"><a href="#" class="avec_sousrubs">Tours <span class="nb-sub-cines">(2)</span></a>
+            			<ul class="soussites">
+            				<li class="sub-tours2"><a class="" href="https://www.cgrcinemas.fr/tours2/" title="CGR Tours 2 Lions">CGR Tours 2 Lions</a></li>
+            				<li class="sub-tours"><a class="" href="https://www.cgrcinemas.fr/tours/" title="CGR Tours Centre">CGR Tours Centre</a></li>
+            			</ul>
+            		</li>
+            		<li class="torcy"><a class="" href="https://www.cgrcinemas.fr/torcy/" title="CGR Torcy Marne-La-Vallée">Torcy Marne-la-Vallée</a></li>		
+            		<li class="troyes"><a class="" href="https://www.cgrcinemas.fr/troyes/" title="CGR Troyes">Troyes</a></li>		
+            		<li class="villefranche-sur-saone"><a class="" href="https://www.cgrcinemas.fr/villefranche-sur-saone/" title="CGR Villefranche-sur-Sâone">
+            		    Villefranche-sur-Saône</a></li>		<li class="villeneuve"><a class="" href="https://www.cgrcinemas.fr/villeneuve/" 
+            		    title="CGR Villeneuve-lès-Béziers">Villeneuve-lès-Béziers</a></li>		<li class="vitrolles"><a class="" 
+            		    href="https://www.cgrcinemas.fr/vitrolles/" title="CGR Marseille Vitrolles">Vitrolles</a></li>
+            	</ul>
+            	<script type="text/javascript">
+            		$(document).ready(function() {
+            			$('.avec_sousrubs').click(function(e){
+            				e.preventDefault();
+            				$(this).next('.soussites').toggleClass('open');
+            			});
+            		});
+            	</script>
+            </div>
+        </div>
+	</main>
+	<footer>
+		<?php require_once "includes/partials/footer.phtml"; ?>
+	</footer>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script>
+</html>

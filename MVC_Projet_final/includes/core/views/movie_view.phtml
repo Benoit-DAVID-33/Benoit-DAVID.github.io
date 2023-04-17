@@ -1,0 +1,84 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>CinemALL</title>
+    <meta name="description" content="Page info film CinemALL">
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+	<link rel="stylesheet" href="public/styles/styles.css" type="text/css" />
+</head>
+<body>
+	<nav>
+		<?php require_once "includes/partials/navbar.phtml"; ?>
+	</nav>
+	<header>
+		<h1 id="titleMoviePage"></h1>
+	</header>
+	<main class="content">
+		<section class="movieContainer">
+        
+    	</section>
+    	<selection class="videoContainer">
+    		
+    	</selection>
+    	<selection class="commenter">
+			<form method="POST" action="?page=commentaire&action=add&id=<?php echo htmlspecialchars($_GET['id'], ENT_QUOTES); ?>" class="commenterForm">
+				<textarea name="contenu" id="commentaire" placeholder="Écriver un commentaire"></textarea>
+				<?php
+					if (isset($_SESSION['login']) && $_SESSION['login']) {
+						// L'utilisateur est connecté
+						echo '<input type="submit" value="Ajouter un commentaire" class="addCom"/>';
+					} else {
+						// L'utilisateur n'est pas connecté
+						echo '<p class="comWarning">Vous devez vous connecter pour poster un commentaire !!!</p>';
+						echo '<input type="submit" value="Ajouter un commentaire" disabled class="addCom" title="Connexion obligatoire!"/>';
+					}
+				?>
+			</form>
+			<div class="commentaireList">
+			    <?php if (!empty($commentaires)) : ?>
+			        <?php foreach (array_reverse($commentaires) as $commentaire) : ?>
+			            <?php 
+			                $date_commentaire = date("d/m/Y H:i", strtotime($commentaire['date_commentaire'])); 
+			                $email_parts = explode('@', $commentaire['email']);
+			                $username = $email_parts[0]; // récupère la première partie de l'e-mail
+			            ?>
+			            <div class="commentaire">
+			                <p><?= $username ?> a commenté le <?= $date_commentaire ?></p>
+			                 <p><?= html_entity_decode($commentaire['contenu']) ?></p>
+			                <?php if (isset($_SESSION['login']) && ($_SESSION['login'] === $commentaire['email'] || $_SESSION['isAdmin'] == 1)) : ?>
+							    	<button class="modifier-commentaire">Modifier</button>
+							    	<a href="?page=commentaire&action=delete&id=<?php echo $commentaire['id']; ?>" class="linkCom"><button>Supprimer</button></a>
+							<?php endif; ?>
+			            </div>
+			            <div class="commentaire-modification">
+						    <form action="?page=commentaire&action=modify&id=<?php echo htmlspecialchars($_GET['id'], ENT_QUOTES); ?>" method="POST">
+						        <textarea name="contenu"><?php echo $commentaire['contenu']; ?></textarea>
+						        <input type="hidden" name="id" value="<?php echo $commentaire['id']; ?>">
+						        <input type="submit" value="Enregistrer">
+						    </form>
+						</div>
+			        	<?php endforeach; ?>
+			    	<?php else : ?>
+			        <p class="comDefault">Aucun commentaire pour le moment. 😭</p>
+			    <?php endif; ?>
+			</div>
+		</selection>
+		<div id="modalWarning" class="modalWarning">
+		  <div class="modal-content">
+		    <span class="closeWarning">&times;</span>
+		    <p>Vous devez être connecté pour effectuer cette action.</p>
+		  </div>
+		</div>
+	</main>
+	<footer>
+		<?php require_once "includes/partials/footer.phtml"; ?>
+	</footer>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script>
+<script type="text/javascript" src="public/scripts/script_movie_view.js"></script>
+</html>

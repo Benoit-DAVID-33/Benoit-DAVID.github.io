@@ -1,0 +1,52 @@
+<?php
+	ini_set('display_errors', 'on');
+	require_once "includes/core/globals.php";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>CinemALL</title>
+    <meta name="description" content="formulaire CinemALL">
+	<?php require "includes/partials/page_head.phtml"; ?>
+	<link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+	<link rel="stylesheet" href="public/styles/styles.css" type="text/css" />
+</head>
+<body>
+	<main>
+		<nav>
+			<?php require_once "includes/partials/navbar.phtml"; ?>
+		</nav>
+		<header>
+			<h1>Formulaire d'inscription</h1>
+		</header>
+		<form class="form" action="" method="post" enctype="multipart/form-data">
+			<div>
+				<label for="champEmail">Email : </label><input type="email" name="chEmail" id="champEmail" value="<?= $unePersonne->getEmail() ?>" required="required"/>
+			</div>
+			<div>
+				<label for="champPassword">Password : </label><input type="password" name="chPassword" id="champPassword" value="<?= 
+				$unePersonne->getPassword() ?>" required="required">
+			</div>
+			<div>
+				<label for="champDateNaissance">Date de naissance : </label><input type="date" name="chDateNaissance" id="champDateNaissance" 
+				value="<?= $unePersonne->getDateNaissance()->format('Y-m-d') ?>" required="required">
+			</div>
+			<div class="avatarForm">
+				<label for="chAvatar">Selectionner un avatar:</label>
+				<input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="2500000"/>
+				<input type="file" id="champAvatar" name="chAvatar" value="<?= $unePersonne->getAvatar() ?>">
+				<span>Ancien avatar : <?php echo $unePersonne->getAvatar() ?></span>
+				<img src="<?= $unePersonne->getAvatar() ?>" class=avatar></img>
+			</div>
+				<button type="submit">Valider</button>
+				<button type="reset">Réinitialiser</button>
+			</div>
+		</form>
+			<?= $message ?? '' ?> 
+		<footer>
+			<?php require_once "includes/partials/footer.phtml"; ?>
+		</footer>
+	</main>
+</body>
+<script type="text/javascript" src="public/scripts/script.js"></script>
+</html>

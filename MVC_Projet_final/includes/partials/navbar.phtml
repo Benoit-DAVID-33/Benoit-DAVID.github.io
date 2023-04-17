@@ -1,0 +1,100 @@
+<div class="navBar">
+	<div class="logo">
+		<img src="public/medias/logo1.png" class="logo1"></img>
+	</div>
+	<div class="navLink">
+		<a href="index.php?page=index">Accueil</a>
+		<a href="index.php?page=cinema&action=execute">Séances</a>
+		<!--<a href="" id="contact">Contact</a>-->
+		<input type="button" class="btnModalContact" id="btnModalContact" value="Contact">
+		<div id="contactModal" class="modal2">
+		  	<div class="modal-content2">
+		    				
+		    	<form action="" class="modalForm2" method="post">
+		    		<h3>Formulaire de contact :</h3>
+		    		<label for="userName">Nom et Prénom</label>
+		    		<input type="text" id="userName" name="userName" placeholder="">
+		      		<label for="userMai1l">Adresse email:</label>
+		      		<input type="email" id="userMail" name="userMail" placeholder="cinemall@domaine.fr">
+		      		<label for="userMessage">Message:</label>
+		      		<textarea id="userMessage" name="message" rows="5" placeholder="Commentaire"></textarea>
+		      		<button type="submit">Envoyer message</button>
+		    	</form>
+		    	<?php
+    				if (isset($_POST['message'])) {
+        				$retour = mail('goldmenben33@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['userMail'] . "\r\n" . 'Reply-to: ' . $_POST['userMail']);
+        			if($retour)
+            			echo '<p>Votre message a bien été envoyé.</p>';
+    				}
+    			?>
+		    	<div class="modalRight2">
+		    		<span class="close">&times;</span>
+		    	</div>
+		  	</div>
+		</div>
+	</div>
+	<div class="navRight">
+		<div class="search">
+			<label for="search"></label>
+			<input type="search" id="search" name="search" placeholder="Rechercher un film">
+		</div>
+		<!--<?= $message ?? '' ?> -->
+		<?php 
+			if (isset($_SESSION['login']) && $_SESSION['login'] != ''){
+		
+				print('<a href="index.php?page=user&action=logout" id="deconnexion">Déconnexion</a>');
+				print('<script>let idPersonne='.$_SESSION['idUser'].';</script>');
+			}else{
+			print('<script>let idPersonne=0;</script>');
+			}
+			?>
+		<div class="connexion">
+			<?php
+				if (!isset($_SESSION['login'])){
+					?>
+					<input type="button" class="btnConnexion" id="loginBtn" name="" value="Mon compte"/>
+					<div id="loginModal" class="modal">
+		  				<div class="modal-content">
+		    				
+		    				<form action="?page=user&action=login" class="modalForm" method="post">
+		      					<label for="userMail">Adresse email:</label>
+		      					<input type="email" id="userMail" name="userMail">
+		      					<label for="password">Mot de passe:</label>
+		      					<input type="password" id="password" name="password">
+		      					<button type="submit">Identifiez-vous</button>
+		    				</form>
+		    				<div class="modalRight">
+		    					<span class="close">&times;</span>
+		    					<button type="button" id="firstConnexion">Créez votre compte</button>
+		    				</div>
+		  				</div>
+					</div>
+					<?php
+				}else{
+					?>
+					<a href="index.php?page=user&action=view" class="" id="avatarConnexion"><img src="<?= $maPersonne->getAvatar() ?>" class="avatar"></img></a>
+					<?php
+				}
+				?>
+		</div>
+	</div>
+	<div id="side-bar">
+      	<div class="toggle-btn" id="btn">
+        	<span></span>
+        	<span></span>
+        	<span></span>
+      	</div>
+      	<ul>
+        	<li><a href="index.php?page=index">Accueil</a></li>
+        	<li><a href="index.php?page=cinema&action=execute">Séances</a></li>
+        	<li><a href="mailto:cinemall@domaine.fr?subject=Objet du message&body=Corps du message">Contact</a></li>
+        	<li><a href="index.php?page=cgu&action=execute">CGU</a></li>
+			<li><a href="index.php?page=user&action=view" class="" id="">Mon compte</a></li>
+			
+        	
+      	</ul>
+    </div>
+</div>
+<section class="content">
+
+</section> 
